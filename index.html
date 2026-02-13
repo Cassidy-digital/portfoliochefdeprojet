@@ -18,6 +18,7 @@
             background: white;
         }
 
+        /* Navigation avec menu hamburger pour mobile */
         nav {
             position: fixed;
             top: 0;
@@ -26,7 +27,7 @@
             background: white;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             z-index: 1000;
-            padding: 1rem 2rem;
+            padding: 1rem;
         }
 
         nav .container {
@@ -38,9 +39,23 @@
         }
 
         nav h1 {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             font-weight: bold;
             color: #111827;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #111827;
+            transition: 0.3s;
         }
 
         nav .nav-links {
@@ -52,19 +67,22 @@
             color: #374151;
             text-decoration: none;
             transition: color 0.3s;
+            font-size: 0.95rem;
         }
 
         nav a:hover {
             color: #111827;
         }
 
+        /* Hero section */
         .hero {
             position: relative;
-            min-height: 600px;
+            min-height: 500px;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            margin-top: 60px;
         }
 
         .hero-bg {
@@ -93,23 +111,24 @@
         }
 
         .hero h2 {
-            font-size: 4rem;
+            font-size: 3rem;
             font-weight: bold;
             margin-bottom: 1rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
         .hero p {
-            font-size: 2rem;
+            font-size: 1.5rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
+        /* Sections */
         section {
-            padding: 5rem 2rem;
+            padding: 3rem 1.5rem;
         }
 
         .section-title {
-            font-size: 2rem;
+            font-size: 1.75rem;
             font-weight: bold;
             color: #111827;
             margin-bottom: 2rem;
@@ -127,20 +146,23 @@
             background: #f9fafb;
         }
 
+        /* About section */
         .about-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: 1fr;
             gap: 2rem;
-            margin-top: 3rem;
+            margin-top: 2rem;
         }
 
         .about-text {
             background: #f9fafb;
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 0.5rem;
-            min-height: 200px;
-            color: #9ca3af;
-            font-style: italic;
+            line-height: 1.8;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
         }
 
         .about-image {
@@ -150,48 +172,85 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #9ca3af;
+            overflow: hidden;
         }
 
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0.5rem;
+        }
 
+        /* Download button */
+        .download-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #f5f5f5;
+            color: #333;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            font-weight: 500;
+            text-decoration: none;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            transition: all 0.25s ease;
+            margin: 1rem 0;
+        }
+
+        .download-btn:hover {
+            background-color: #ffffff;
+            border-color: #d0d0d0;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+
+        /* Skills section */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
         .skill-category h3 {
             font-size: 1.5rem;
             font-weight: bold;
             margin-bottom: 1.5rem;
+            color: #111827;
         }
 
         .skill-box {
-    background: white;
-    padding: 2rem;
-    border-radius: 0.5rem;
-    min-height: 300px;
-    color: #9ca3af;
-    font-style: italic;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
-}
+            background: white;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-.skill-box:hover {
-    transform: translateY(-5px); 
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15); 
-}
+        .skill-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
 
-        
+        .skill-item {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
 
+        .skill-item strong {
+            display: block;
+            color: #111827;
+            margin-bottom: 0.25rem;
+        }
 
+        /* Experience section */
         .experience-list {
-            margin-top: 3rem;
+            margin-top: 2rem;
         }
 
         .experience-item {
             border-left: 4px solid #111827;
-            padding-left: 2rem;
+            padding-left: 1.5rem;
             padding-top: 1rem;
             padding-bottom: 1rem;
             margin-bottom: 2rem;
@@ -199,34 +258,52 @@
 
         .experience-box {
             background: #f9fafb;
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 0.5rem;
-            min-height: 200px;
-            color: #9ca3af;
-            font-style: italic;
         }
 
-        
+        .experience-box h3 {
+            font-size: 1.25rem;
+            color: #111827;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-box h4 {
+            font-size: 1rem;
+            color: #374151;
+            margin-bottom: 1rem;
+        }
+
+        .experience-box ul {
+            padding-left: 1.5rem;
+        }
+
+        .experience-box li {
+            margin-bottom: 0.5rem;
+            color: #4b5563;
+        }
+
+        /* Projects section */
         .project {
-            margin-top: 3rem;
-            margin-bottom: 4rem;
+            margin-top: 2rem;
+            margin-bottom: 3rem;
         }
 
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: 1fr;
             gap: 2rem;
-            align-items: center;
         }
 
         .carousel-container {
             position: relative;
+            order: 1;
         }
 
         .carousel {
             background: #d1d5db;
             border-radius: 0.5rem;
-            height: 400px;
+            height: 300px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -250,6 +327,7 @@
             cursor: pointer;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             transition: background 0.3s;
+            z-index: 10;
         }
 
         .carousel-btn:hover {
@@ -257,11 +335,11 @@
         }
 
         .carousel-btn.prev {
-            left: 1rem;
+            left: 0.5rem;
         }
 
         .carousel-btn.next {
-            right: 1rem;
+            right: 0.5rem;
         }
 
         .carousel-dots {
@@ -285,9 +363,10 @@
 
         .project-description {
             background: white;
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 0.5rem;
-            min-height: 400px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            order: 2;
         }
 
         .project-description h3 {
@@ -298,42 +377,141 @@
         }
 
         .project-description p {
-            color: #9ca3af;
-            font-style: italic;
+            color: #4b5563;
+            line-height: 1.8;
         }
 
-        
-        .search-content {
-            margin-top: 3rem;
+        /* Certifications section */
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
 
-        .search-text {
+        .certification-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1.5rem;
             background: #f9fafb;
-            padding: 2rem;
             border-radius: 0.5rem;
-            min-height: 300px;
-            color: #9ca3af;
-            font-style: italic;
-            margin-bottom: 2rem;
+            border-left: 4px solid #111827;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .certification-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .certification-icon {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .certification-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .certification-content h3 {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #111827;
+            margin-bottom: 0.5rem;
+        }
+
+        .certification-org {
+            color: #374151;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            font-size: 0.9rem;
+        }
+
+        .certification-date {
+            color: #6b7280;
+            font-size: 0.85rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .certification-desc {
+            color: #6b7280;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Software section */
+        .app-icons {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
+            gap: 1rem;
+            align-items: center;
+            justify-items: center;
+            max-width: 100%;
+            margin: 2rem auto 0;
+            padding: 1rem 0;
+        }
+
+        .app-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .app-tile {
+            width: 64px;
+            height: 64px;
+            border-radius: 18px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .app-tile img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .app-label {
+            margin-top: 6px;
+            font-size: 11px;
+            color: #333;
+            word-break: break-word;
+        }
+
+        /* Search section */
+        .search-content {
+            margin-top: 2rem;
         }
 
         .search-points {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: 1fr;
             gap: 1.5rem;
         }
 
         .search-point {
             background: white;
             border: 2px solid #111827;
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 0.5rem;
-            min-height: 150px;
-            color: #9ca3af;
-            font-style: italic;
+            color: #4b5563;
+            line-height: 1.7;
         }
 
-        
+        /* Contact section */
         .contact-section {
             background: linear-gradient(to bottom right, #111827, #1f2937);
             color: white;
@@ -346,9 +524,15 @@
 
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-grid h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
         }
 
         .contact-item {
@@ -371,51 +555,145 @@
         }
 
         .contact-value {
-            font-size: 1.125rem;
+            font-size: 1.05rem;
         }
 
         .contact-value a {
             color: white;
             text-decoration: none;
             transition: color 0.3s;
+            word-break: break-all;
         }
 
         .contact-value a:hover {
             color: #d1d5db;
         }
 
-        .e-language-box {
-            background: #1f2937;
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-            min-height: 100px;
-            color: #9ca3af;
-            font-style: italic;
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid #374151;
-        }
-
         .footer {
             text-align: center;
-            margin-top: 4rem;
+            margin-top: 3rem;
             padding-top: 2rem;
             border-top: 1px solid #374151;
             color: #9ca3af;
+            font-size: 0.9rem;
         }
 
+        /* Media Queries pour responsive */
         @media (max-width: 768px) {
+            /* Menu hamburger visible sur mobile */
+            .hamburger {
+                display: flex;
+            }
+
             nav .nav-links {
-                flex-wrap: wrap;
-                gap: 1rem;
+                position: fixed;
+                top: 60px;
+                left: -100%;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                transition: left 0.3s ease;
+                gap: 1.5rem;
+            }
+
+            nav .nav-links.active {
+                left: 0;
+            }
+
+            nav a {
+                font-size: 1.1rem;
+            }
+
+            .hero {
+                min-height: 400px;
+                margin-top: 60px;
             }
 
             .hero h2 {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
 
             .hero p {
-                font-size: 1.25rem;
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            section {
+                padding: 2rem 1rem;
+            }
+
+            .app-icons {
+                grid-template-columns: repeat(auto-fill, minmax(56px, 1fr));
+                gap: 0.75rem;
+            }
+
+            .app-tile {
+                width: 56px;
+                height: 56px;
+            }
+
+            .app-label {
+                font-size: 10px;
+            }
+        }
+
+        /* Media Queries pour tablettes et écrans moyens */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .skills-grid,
+            .certifications-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Media Queries pour grands écrans */
+        @media (min-width: 1025px) {
+            .about-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .project-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .certifications-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .carousel {
+                height: 400px;
+            }
+
+            .hero {
+                min-height: 600px;
+            }
+
+            .hero h2 {
+                font-size: 4rem;
+            }
+
+            .hero p {
+                font-size: 2rem;
             }
         }
     </style>
@@ -425,16 +703,21 @@
     <nav>
         <div class="container">
             <h1>Mon Portfolio</h1>
-            <div class="nav-links">
-                <a href="#about">À propos</a>
-                <a href="#education">Formation</a>
-                <a href="#skills">Compétences</a>
-                <a href="#experience">Expériences</a>
-                <a href="#projects">Projets</a>
-                <a href="#certifications">Certifications</a>
-                <a href="#software">Logiciels</a>
-                <a href="#search">Ce que je recherche</a>
-                <a href="#contact">Contact</a>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="#about" onclick="closeMenu()">À propos</a>
+                <a href="#education" onclick="closeMenu()">Formation</a>
+                <a href="#skills" onclick="closeMenu()">Compétences</a>
+                <a href="#experience" onclick="closeMenu()">Expériences</a>
+                <a href="#projects" onclick="closeMenu()">Projets</a>
+                <a href="#certifications" onclick="closeMenu()">Certifications</a>
+                <a href="#software" onclick="closeMenu()">Logiciels</a>
+                <a href="#search" onclick="closeMenu()">Ce que je recherche</a>
+                <a href="#contact" onclick="closeMenu()">Contact</a>
             </div>
         </div>
     </nav>
@@ -442,7 +725,7 @@
     
     <section class="hero">
         <div class="hero-bg" style="background-image: url('https://i.postimg.cc/J0zY3r8Q/Black-White-Halftone-Creative-Portfolio-Presentation-3.jpg'); background-size: cover; background-position: center;">
-</div>
+        </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h2>CASSIDY CHARLES</h2>
@@ -456,194 +739,127 @@
             <h2 class="section-title">À PROPOS DE MOI</h2>
             <div class="about-grid">
                 <div class="about-text">
-                    Je m'appelle Cassidy et j'ai 19 ans. Je suis actuellement étudiante en B1 Chef de Projet Digital à Ynov Campus Strasbourg.
-
-Ce que j'aime dans ma formation, c'est qu'elle correspond parfaitement à ma personnalité. J'ai toujours eu l'esprit à la fois très créatif et logique, et j'aime beaucoup ce que je fais actuellement. J’aime créer des choses, et je suis quelqu'un qui a constamment de nombreuses idées en tête.
-
-
-En parallèle de mes études, j'ai une vraie passion pour les voyages. J'ai eu l'occasion de découvrir pas mal d'endroits : le Canada, Sainte-Lucie, la Guadeloupe, le Brésil, la Martinique, Singapour où j'ai d'ailleurs fait mon premier voyage toute seule... Cette passion s'explique par ma grande curiosité et mon envie constante d'apprendre de nouvelles choses. Chaque destination m'apporte une nouvelle perspective et enrichit ma vision du monde.
-
+                    <p>Je m'appelle Cassidy et j'ai 19 ans. Je suis actuellement étudiante en B1 Chef de Projet Digital à Ynov Campus Strasbourg.</p>
+                    
+                    <p>Ce que j'aime dans ma formation, c'est qu'elle correspond parfaitement à ma personnalité. J'ai toujours eu l'esprit à la fois très créatif et logique, et j'aime beaucoup ce que je fais actuellement. J'aime créer des choses, et je suis quelqu'un qui a constamment de nombreuses idées en tête.</p>
+                    
+                    <p>En parallèle de mes études, j'ai une vraie passion pour les voyages. J'ai eu l'occasion de découvrir pas mal d'endroits : le Canada, Sainte-Lucie, la Guadeloupe, le Brésil, la Martinique, Singapour où j'ai d'ailleurs fait mon premier voyage toute seule... Cette passion s'explique par ma grande curiosité et mon envie constante d'apprendre de nouvelles choses. Chaque destination m'apporte une nouvelle perspective et enrichit ma vision du monde.</p>
                 </div>
                 <div class="about-image">
-    <img src="https://i.postimg.cc/Z5M63Pgc/IMG-8496-2-Modifie.png" alt="À propos" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.5rem;">
-</div>
+                    <img src="https://i.postimg.cc/Z5M63Pgc/IMG-8496-2-Modifie.png" alt="À propos">
+                </div>
             </div>
         </div>
     </section>
 
+    
+    <section id="education" class="bg-gray">
+        <div class="container">
+            <h2 class="section-title">MA FORMATION</h2>
+            <div class="about-grid" style="display: block;">
+                <div class="about-text" style="margin-bottom: 20px;">
+                    <p>La filière Chef de Projet Digital est vraiment complète puisqu'elle englobe trois domaines spécifiques : la tech & business, le créa-design, et le marketing digital et communication. Cette diversité me permet d'avoir une grande palette de compétences et de savoir faire plein de choses différentes, que ce soit dans la créa, la tech ou le marketing. Ça fait de moi un élément complet, capable d'apporter de la nouveauté avec des connaissances sur un peu tout.</p>
+                    
+                    <p>Ma filière est orientée vers les métiers d'avenir et repose sur l'apprentissage des technologies qui prennent aujourd'hui une place grandissante, notamment l'intelligence artificielle. J'y développe à la fois des compétences "classiques" et des compétences liées à l'IA : savoir prompter, générer du contenu, utiliser et optimiser ces outils. L'objectif est d'apprendre non seulement à travailler sans l'IA, mais aussi à l'intégrer intelligemment pour en faire une véritable valeur ajoutée dans les projets.</p>
+                </div>
+                
+                <a href="https://i.postimg.cc/mgk1jzWD/CV-alternance-Strasbourg.jpg" download class="download-btn" style="margin-bottom: 20px; display: inline-block;">
+                    Télécharger mon CV
+                </a>
 
-<section id="education">
-    <div class="container">
-        <h2 class="section-title">MA FORMATION</h2>
-
-        <div class="about-grid" style="display: block;"> 
-            
-            <div class="about-text" style="margin-bottom: 20px;">
-               <p>
-                    La filière Chef de Projet Digital est vraiment complète puisqu'elle englobe trois domaines spécifiques : la tech & business, le créa-design, et le marketing digital et communication. Cette diversité me permet d'avoir une grande palette de compétences et de savoir faire plein de choses différentes, que ce soit dans la créa, la tech ou le marketing. Ça fait de moi un élément complet, capable d'apporter de la nouveauté avec des connaissances sur un peu tout.
-                </p>
-                <p>
-                    Ma filière est orientée vers les métiers d’avenir et repose sur l’apprentissage des technologies qui prennent aujourd’hui une place grandissante, notamment l’intelligence artificielle. J’y développe à la fois des compétences “classiques” et des compétences liées à l’IA : savoir prompter, générer du contenu, utiliser et optimiser ces outils. L’objectif est d’apprendre non seulement à travailler sans l’IA, mais aussi à l’intégrer intelligemment pour en faire une véritable valeur ajoutée dans les projets.
-                </p>
-            </div>
-            <style>
-    .download-btn {
-        display: inline-block;
-        padding: 12px 24px;
-        background-color: #f5f5f5; 
-        color: #333;
-        border: 1px solid #e0e0e0;
-        border-radius: 12px;
-        font-weight: 500;
-        text-decoration: none;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-        transition: all 0.25s ease;
-    }
-
-    .download-btn:hover {
-        background-color: #ffffff;
-        border-color: #d0d0d0;
-        transform: translateY(-3px);
-        box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-    }
-    .download-btn:hover {
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.7); 
-}
-
-}
-
-</style>
-
-<a href="https://i.postimg.cc/mgk1jzWD/CV-alternance-Strasbourg.jpg" download class="download-btn" style="margin-bottom: 20px; display: inline-block;">
-    Télécharger mon CV
-</a>
-
-            <div class="about-image">
-                <img src="https://www.capitainestudy.fr/wp-content/uploads/listing-uploads/cover/2022/06/MicrosoftTeams-image-17.jpg"
-                style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.5rem;">
+                <div class="about-image">
+                    <img src="https://www.capitainestudy.fr/wp-content/uploads/listing-uploads/cover/2022/06/MicrosoftTeams-image-17.jpg" alt="Formation">
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-
-
-
-
-    <section id="skills" class="bg-gray">
+    
+    <section id="skills">
         <div class="container">
             <h2 class="section-title">MES COMPÉTENCES</h2>
             <div class="skills-grid">
                 <div class="skill-category">
-    <h3>HARD SKILLS</h3>
-    <div class="skill-box">
-
-        <div class="skill-item">
-            <strong>Création de stratégies de communication</strong><br>
+                    <h3>HARD SKILLS</h3>
+                    <div class="skill-box">
+                        <div class="skill-item">
+                            <strong>Création de stratégies de communication</strong>
+                        </div>
+                        <div class="skill-item">
+                            <strong>Marketing digital</strong>
+                            SEO / SEA, campagnes Google Ads, emailing, réseaux sociaux
+                        </div>
+                        <div class="skill-item">
+                            <strong>Outils de conception</strong>
+                            Canva, Figma, Photoshop, Illustrator, Wix, Shopify, Wordpress
+                        </div>
+                        <div class="skill-item">
+                            <strong>Veille professionnelle</strong>
+                            Veille concurrentielle et analyse des tendances web
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>SOFT SKILLS</h3>
+                    <div class="skill-box">
+                        <div class="skill-item">Créativité</div>
+                        <div class="skill-item">Capacité d'adaptation</div>
+                        <div class="skill-item">Curiosité numérique</div>
+                        <div class="skill-item">Esprit d'équipe et autonomie</div>
+                        <div class="skill-item">Capacité à gérer plusieurs projets en parallèle</div>
+                        <div class="skill-item">Volonté d'apprendre</div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="skill-item">
-            <strong>Marketing digital</strong><br>
-            SEO / SEA, campagnes Google Ads, emailing, réseaux sociaux
-        </div>
-
-        <div class="skill-item">
-            <strong>Outils de conception</strong><br>
-            Canva, Figma, Photoshop, Illustrator, Wix, Shopify, Wordpress
-        </div>
-
-        <div class="skill-item">
-            <strong>Veille professionnelle</strong><br>
-            Veille concurrentielle et analyse des tendances web
-        </div>
-
-    </div>
-</div>
-<div class="skill-category">
-    <h3>SOFT SKILLS</h3>
-    <div class="skill-box">
-
-        <div class="skill-item">
-            Créativité
-        </div>
-
-        <div class="skill-item">
-            Capacité d'adaptation
-        </div>
-
-        <div class="skill-item">
-            Curiosité numérique
-        </div>
-
-        <div class="skill-item">
-            Esprit d'équipe et autonomie
-        </div>
-
-        <div class="skill-item">
-            Capacité à gérer plusieurs projets en parallèle
-        </div>
-<div class="skill-item">
-    Volonté d'apprendre
-</div>
-    </div>
-</div>
-
-<style>
-.skill-item {
-    margin-bottom: 12px; 
-}
-</style>
-
     </section>
 
     
-    <section id="experience">
+    <section id="experience" class="bg-gray">
         <div class="container">
             <h2 class="section-title">MES EXPÉRIENCES</h2>
             <div class="experience-list">
-               <div class="experience-item">
-    <div class="experience-box">
-        <h3>Direction Régionale des Finances Publiques de Guyane – 2025</h3>
-        <h4>Auxiliaire – Service RH et Pôle Formation Professionnelle</h4>
-
-        <ul>
-            <li>Gestion administrative : préparation et suivi de documents, traitement des mails.</li>
-            <li>Contribution à l’organisation et à l’élaboration des formations.</li>
-            <li>Gestion administrative du personnel (contrats, absences, congés, dossiers salariés).</li>
-            <li>Utilisation d’outils bureautiques (Excel, Word, Outlook).</li>
-        </ul>
-    </div>
-</div>
+                <div class="experience-item">
+                    <div class="experience-box">
+                        <h3>Direction Régionale des Finances Publiques de Guyane</h3>
+                        <h4>Auxiliaire – Service RH et Pôle Formation Professionnelle – 2025</h4>
+                        <ul>
+                            <li>Gestion administrative : préparation et suivi de documents, traitement des mails.</li>
+                            <li>Contribution à l'organisation et à l'élaboration des formations.</li>
+                            <li>Gestion administrative du personnel (contrats, absences, congés, dossiers salariés).</li>
+                            <li>Utilisation d'outils bureautiques (Excel, Word, Outlook).</li>
+                        </ul>
+                    </div>
+                </div>
 
                 <div class="experience-item">
-    <div class="experience-box">
-        <h3>Agence Profil – Strasbourg</h3>
-        <h4>Hôtesse d’accueil – 2024 à aujourd’hui</h4>
+                    <div class="experience-box">
+                        <h3>Agence Profil – Strasbourg</h3>
+                        <h4>Hôtesse d'accueil – 2024 à aujourd'hui</h4>
+                        <ul>
+                            <li>Accueil et orientation lors d'événements (stade du RC Strasbourg, conférences, concerts, cérémonies).</li>
+                            <li>Veille à la bonne tenue de l'espace d'accueil et à l'image de l'entreprise.</li>
+                        </ul>
+                    </div>
+                </div>
 
-        <ul>
-            <li>Accueil et orientation lors d’événements (stade du RC Strasbourg, conférences, concerts, cérémonies).</li>
-            <li>Veille à la bonne tenue de l’espace d’accueil et à l’image de l’entreprise.</li>
-        </ul>
-    </div>
-</div>
-
-<div class="experience-item">
-    <div class="experience-box">
-        <h3>Jo le Glacier - Guyane </h3>
-        <h4>Vendeuse et serveuse - Mai à Juillet 2025</h4>
-
-        <ul>
-            <li>Travail d'équipe et service à la clientèle même pendant les périodes de forte affluence.</li>
-            <li>Mise en place et rangement du poste de travail.</li>
-        </ul>
-    </div>
-</div>
+                <div class="experience-item">
+                    <div class="experience-box">
+                        <h3>Jo le Glacier - Guyane</h3>
+                        <h4>Vendeuse et serveuse - Mai à Juillet 2024</h4>
+                        <ul>
+                            <li>Travail d'équipe et service à la clientèle même pendant les périodes de forte affluence.</li>
+                            <li>Mise en place et rangement du poste de travail.</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
    
-    <section id="projects" class="bg-gray">
+    <section id="projects">
         <div class="container">
             <h2 class="section-title">MES PROJETS</h2>
 
@@ -651,9 +867,7 @@ En parallèle de mes études, j'ai une vraie passion pour les voyages. J'ai eu l
             <div class="project">
                 <div class="project-grid">
                     <div class="carousel-container">
-                        <div class="carousel" id="carousel1">
-                            [Image projet 1 - Slide <span id="slide1">1</span>/5]
-                        </div>
+                        <div class="carousel" id="carousel1"></div>
                         <button class="carousel-btn prev" onclick="changeSlide('carousel1', -1)">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="15 18 9 12 15 6"></polyline>
@@ -668,8 +882,7 @@ En parallèle de mes études, j'ai une vraie passion pour les voyages. J'ai eu l
                     </div>
                     <div class="project-description">
                         <h3>OSMERA</h3>
-                        <p>Lors des Ymmersions, en début d’année, nous avions trois semaines pour créer une marque de luxe écologique sans aucune base préalable. J’ai proposé l’idée d’une marque de cosmétiques naturels et éco-responsables à base de roucou, une graine originaire de Guyane dont je suis issue et qui servait autrefois de maquillage. J’ai souhaité reprendre cette tradition ancestrale tout en veillant à intégrer un minimum les autres projets proposés, ce qui nous a conduit à associer notre concept à du parfum provençal et à l’idée de showrooms permettant de créer un maquillage ou un parfum personnalisé. Mon concept a été retenu et c’est ainsi que notre équipe a donné naissance à Osmera.
-</p>
+                        <p>Lors des Ymmersions, en début d'année, nous avions trois semaines pour créer une marque de luxe écologique sans aucune base préalable. J'ai proposé l'idée d'une marque de cosmétiques naturels et éco-responsables à base de roucou, une graine originaire de Guyane dont je suis issue et qui servait autrefois de maquillage. J'ai souhaité reprendre cette tradition ancestrale tout en veillant à intégrer un minimum les autres projets proposés, ce qui nous a conduit à associer notre concept à du parfum provençal et à l'idée de showrooms permettant de créer un maquillage ou un parfum personnalisé. Mon concept a été retenu et c'est ainsi que notre équipe a donné naissance à Osmera.</p>
                     </div>
                 </div>
             </div>
@@ -679,12 +892,10 @@ En parallèle de mes études, j'ai une vraie passion pour les voyages. J'ai eu l
                 <div class="project-grid">
                     <div class="project-description">
                         <h3>ONYRA</h3>
-                        <p>ONYRA est un projet en groupe que nous avons mené sur tout le premier semestre. L’objectif était de créer une marque de prêt-à-porter écologique, pensée uniquement pour l’e-commerce. Nous avons choisi de développer une marque de sport exclusivement destinée aux femmes, un positionnement qui aurait pu nous désavantager mais que nous avons décidé d’assumer comme une véritable force. Nous avons imaginé des vêtements ajustables, capables de s’adapter à différentes morphologies et aux besoins réels des femmes(les règles, la grossesse, l'ablation du sein, etc), afin de proposer une alternative plus inclusive et plus confortable. Nous avons également créé une gamme pensée pour que les femmes pratiquant des sports très masculinisés se sentent représentées et puissent trouver des vêtements réellement adaptés à elles. Ce projet porte de vraies valeurs d’inclusivité, et j’en suis particulièrement fière.</p>
+                        <p>ONYRA est un projet en groupe que nous avons mené sur tout le premier semestre. L'objectif était de créer une marque de prêt-à-porter écologique, pensée uniquement pour l'e-commerce. Nous avons choisi de développer une marque de sport exclusivement destinée aux femmes, un positionnement qui aurait pu nous désavantager mais que nous avons décidé d'assumer comme une véritable force. Nous avons imaginé des vêtements ajustables, capables de s'adapter à différentes morphologies et aux besoins réels des femmes (les règles, la grossesse, l'ablation du sein, etc), afin de proposer une alternative plus inclusive et plus confortable. Nous avons également créé une gamme pensée pour que les femmes pratiquant des sports très masculinisés se sentent représentées et puissent trouver des vêtements réellement adaptés à elles. Ce projet porte de vraies valeurs d'inclusivité, et j'en suis particulièrement fière.</p>
                     </div>
                     <div class="carousel-container">
-                        <div class="carousel" id="carousel2">
-                            [Image projet 2 - Slide <span id="slide2">1</span>/5]
-                        </div>
+                        <div class="carousel" id="carousel2"></div>
                         <button class="carousel-btn prev" onclick="changeSlide('carousel2', -1)">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="15 18 9 12 15 6"></polyline>
@@ -704,9 +915,7 @@ En parallèle de mes études, j'ai une vraie passion pour les voyages. J'ai eu l
             <div class="project">
                 <div class="project-grid">
                     <div class="carousel-container">
-                        <div class="carousel" id="carousel3">
-                            [Image projet 3 - Slide <span id="slide3">1</span>/5]
-                        </div>
+                        <div class="carousel" id="carousel3"></div>
                         <button class="carousel-btn prev" onclick="changeSlide('carousel3', -1)">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="15 18 9 12 15 6"></polyline>
@@ -721,247 +930,84 @@ En parallèle de mes études, j'ai une vraie passion pour les voyages. J'ai eu l
                     </div>
                     <div class="project-description">
                         <h3>STRASLY</h3>
-                        <p>Strasly est un projet que nous avons réalisé entre différentes filières de l’école. J’ai été cheffe de projet et j’ai accompagné mon équipe dans la création d’un réseau social dédié à Strasbourg, pensé pour faire découvrir des lieux méconnus et mettre en avant des artisans locaux. Nous voulions proposer une façon plus authentique et plus vivante d’explorer la ville.
-Ce projet a été un véritable défi. En plus de gérer l’équipe et l’avancée du projet, j’ai dû contacter des infrastructures et des artisans pour leur présenter notre concept et les convaincre d’y participer. Cela m’a beaucoup appris sur la démarche professionnelle et la gestion concrète de projet. C’était un projet enrichissant et réellement plaisant à mener.</p>
+                        <p>Strasly est un projet que nous avons réalisé entre différentes filières de l'école. J'ai été cheffe de projet et j'ai accompagné mon équipe dans la création d'un réseau social dédié à Strasbourg, pensé pour faire découvrir des lieux méconnus et mettre en avant des artisans locaux. Nous voulions proposer une façon plus authentique et plus vivante d'explorer la ville. Ce projet a été un véritable défi. En plus de gérer l'équipe et l'avancée du projet, j'ai dû contacter des infrastructures et des artisans pour leur présenter notre concept et les convaincre d'y participer. Cela m'a beaucoup appris sur la démarche professionnelle et la gestion concrète de projet. C'était un projet enrichissant et réellement plaisant à mener.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-
-
-<section id="certifications">
-    <div class="container">
-        <h2 class="section-title">MES CERTIFICATIONS</h2>
-        <div class="certifications-grid">
-            <div class="certification-item">
-                <div class="certification-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2">
-                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                    </svg>
-                </div>
-                <div class="certification-content">
-                    <h3>Parcours RGPD (Modules 1 à 5)</h3>
-                    <p class="certification-org">CNIL</p>
-                    <p class="certification-date">27/11/2025</p>
-                    <p class="certification-desc">Parcours complet du MOOC RGPD de la CNIL (modules 1 à 5), couvrant les bases du RGPD, les principes clés, 
-            les responsabilités des acteurs et les bonnes pratiques de conformité.</p>
-                </div>
-            </div>
-
-            <div class="certification-item">
-                <div class="certification-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2">
-                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                    </svg>
-                </div>
-                <div class="certification-content">
-                    <h3>Certification Pix</h3>
-                    <p class="certification-org">Pix / Ministère de l’Éducation nationale
-</p>
-                    <p class="certification-date">2024</p>
-                    <p class="certification-desc">Validation officielle des compétences numériques : sécurité informatique, recherche d'information, communication en ligne, création de contenus, gestion des données et résolution de problèmes numériques.</p>
-                </div>
-            </div>
-
-            <div class="certification-item">
-                <div class="certification-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2">
-                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                    </svg>
-                </div>
-                <div class="certification-content">
-                    <h3>PSC1 – Prévention et Secours Civiques de niveau 1
-</h3>
-                    <p class="certification-org">Protection Civile</p>
-                    <p class="certification-date">2021</p>
-                    <p class="certification-desc">Formation aux gestes de premiers secours : protection, alerte, mise en sécurité, hémorragies, positions d’urgence, réanimation, utilisation du défibrillateur, prise en charge d’une victime jusqu’à l’arrivée des secours.
-</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<style>
-   
-.certifications-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.certification-item {
-    display: flex;
-    gap: 1.5rem;
-    padding: 2rem;
-    background: #f9fafb;
-    border-radius: 0.5rem;
-    border-left: 4px solid #111827;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.certification-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-.certification-icon {
-    flex-shrink: 0;
-    width: 50px;
-    height: 50px;
-    background: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.certification-icon svg {
-    width: 30px;
-    height: 30px;
-}
-
-.certification-content h3 {
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: #111827;
-    margin-bottom: 0.5rem;
-}
-
-.certification-org {
-    color: #374151;
-    font-weight: 600;
-    margin-bottom: 0.25rem;
-}
-
-.certification-date {
-    color: #6b7280;
-    font-size: 0.875rem;
-    margin-bottom: 0.75rem;
-}
-
-.certification-desc {
-    color: #6b7280;
-    font-size: 0.95rem;
-    line-height: 1.5;
-}
-
-</style>
-
-<section id="software">
- <div class="container">
-<h2 class="section-title">LES LOGICIELS QUE J'UTILISE</h2>
-<div style="height: 20px;"></div> 
-
-<div id="app-icons" class="app-icons"></div>
-
-<script>
-document.getElementById('app-icons').innerHTML += (function(){
-  const apps=[
-    {name:'Canva',src:'https://images-eds-ssl.xboxlive.com/image?url=4rt9.lXDC4H_93laV1_eHHFT949fUipzkiFOBH3fAiZZUCdYojwUyX2aTonS1aIwMrx6NUIsHfUHSLzjGJFxxo4K81Ei7WzcnqEk8W.Mgwb4qpGvx4RNnZ1Tw3PFpG5m0N7wZZU3S406iJGUFroKzwJPszOT6vgp170Fs_YVbMM-&format=source'},
-    {name:'Trello',src:'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/7d/74/23/7d742311-c2d5-2416-be3c-a710e7742957/electron.png/1200x630bb.png'},
-    {name:'Illustrator',src:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBYZ-s_4KM_H7JkE5B0ZUofREIDHWnccKOTw&s'},
-    {name:'Photoshop',src:'https://images.sftcdn.net/images/t_app-icon-m/p/bbdedd58-96bf-11e6-ab2f-00163ed833e7/2782924292/adobe-photoshop-icon.png'},
-    {name:'Wix',src:'https://cdn-icons-png.flaticon.com/512/5968/5968770.png'},
-    {name:'Scenario',src:'https://cdn.prod.website-files.com/65f9d7f5c88d4a9940b06735/66566912d17d62193f68cbd5_Wa9BPILP_400x400.webp'},
-    {name:'Excel',src:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Microsoft_Office_Excel_%282019–2025%29.svg/826px-Microsoft_Office_Excel_%282019–2025%29.svg.png'},
-    {name:'Word',src:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Microsoft_Office_Word_%282025–present%29.svg/1166px-Microsoft_Office_Word_%282025–present%29.svg.png'},
-    {name:'NanoBanana',src:'https://store-images.s-microsoft.com/image/apps.47708.13995459486483234.d55d4637-fda0-48bc-b660-131213c2390f.a5803faf-f2fb-4a2a-b350-a42da831ac3b'},
-    {name:'CapCut',src:'https://static.vecteezy.com/ti/vecteur-libre/p1/13948546-logo-capcut-sur-fond-blanc-transparent-gratuit-vectoriel.jpg'},
-    {name:'Feedly',src:'https://upload.wikimedia.org/wikipedia/commons/5/56/Feedly-logo.png'},
-    {name:'Teams',src:'https://img.freepik.com/premium-vector/teams-logo_1157034-580.jpg?semt=ais_hybrid&w=740&q=80'},
-    {name:'Asana',src:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwEodKlQHNi3FEyWj5ODtQapWRqv12Fqlk4g&s'},
-     {name:'Outlook',src:'https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/B00-M365-Outlook-App-Icon'},
-      {name:'Powerpoint',src:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiXCTF2B6CXGFLDZAdbS35VS9E2o3HbK7xwA&s'},
-       {name:'Sublimetext',src:'https://upload.wikimedia.org/wikipedia/en/d/d2/Sublime_Text_3_logo.png'},
-        {name:'Figma',src:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMfPeVpXBDNMY2Mio-NN9lZSb9jOaw2CBs4Q&s'},
-         {name:'CreativeCloud',src:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAEPcn7-1FET8-xENfhX6J97htkiZnanwxbg&s'},
-
-
-  ];
-  return apps.map(a=>`
-    <div class="app-item" title="${a.name}">
-      <div class="app-tile">
-        <img src="${a.src}" alt="${a.name} logo" loading="lazy">
-      </div>
-      <div class="app-label">${a.name}</div>
-    </div>
-  `).join('');
-})();
-</script>
-<div id="app-icons" class="app-icons"></div>
-</div>
-
-<div style="height: 30px;"></div>  
-
-
-
-
-
-    <section id="search">
+    
+    <section id="certifications" class="bg-gray">
         <div class="container">
-            <h2 class="section-title">CE QUE JE RECHERCHE</h2>
-            <div class="search-content">
-               
-                <div class="search-points">
-                    <div class="search-point">Je veux approfondir mes compétences en SEO, réseaux sociaux, webdesign, UX/UI et stratégie digitale. Une entreprise qui me laisse apprendre, expérimenter et participer à la performance de ses actions serait idéale pour mon évolution.</div>
-                    <div class="search-point">J’aimerais mettre mes compétences au service d’une organisation qui partage des valeurs fortes: créativité, impact, engagement ou innovation. Participer à quelque chose de plus grand que moi me motive énormément.</div>
-                    <div class="search-point">Je recherche un environnement où l’on peut poser des questions, recevoir des retours constructifs et progresser chaque jour. L’accompagnement, le partage de connaissances et le travail en équipe sont essentiels pour moi.</div>
+            <h2 class="section-title">MES CERTIFICATIONS</h2>
+            <div class="certifications-grid">
+                <div class="certification-item">
+                    <div class="certification-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                        </svg>
+                    </div>
+                    <div class="certification-content">
+                        <h3>Parcours RGPD (Modules 1 à 5)</h3>
+                        <p class="certification-org">CNIL</p>
+                        <p class="certification-date">27/11/2025</p>
+                        <p class="certification-desc">Parcours complet du MOOC RGPD de la CNIL (modules 1 à 5), couvrant les bases du RGPD, les principes clés, les responsabilités des acteurs et les bonnes pratiques de conformité.</p>
+                    </div>
+                </div>
+
+                <div class="certification-item">
+                    <div class="certification-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                        </svg>
+                    </div>
+                    <div class="certification-content">
+                        <h3>Certification Pix</h3>
+                        <p class="certification-org">Pix / Ministère de l'Éducation nationale</p>
+                        <p class="certification-date">2024</p>
+                        <p class="certification-desc">Validation officielle des compétences numériques : sécurité informatique, recherche d'information, communication en ligne, création de contenus, gestion des données et résolution de problèmes numériques.</p>
+                    </div>
+                </div>
+
+                <div class="certification-item">
+                    <div class="certification-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                        </svg>
+                    </div>
+                    <div class="certification-content">
+                        <h3>PSC1 – Prévention et Secours Civiques de niveau 1</h3>
+                        <p class="certification-org">Protection Civile</p>
+                        <p class="certification-date">2021</p>
+                        <p class="certification-desc">Formation aux gestes de premiers secours : protection, alerte, mise en sécurité, hémorragies, positions d'urgence, réanimation, utilisation du défibrillateur, prise en charge d'une victime jusqu'à l'arrivée des secours.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-<style>
-  .app-icons {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
-    gap: 14px;
-    align-items: center;
-    justify-items: center;
-    max-width: 750px;
-    margin: 0 auto;
-    padding: 20px;
-  }
+    
+    <section id="software">
+        <div class="container">
+            <h2 class="section-title">LES LOGICIELS QUE J'UTILISE</h2>
+            <div id="app-icons" class="app-icons"></div>
+        </div>
+    </section>
 
-  .app-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .app-tile {
-    width: 64px;
-    height: 64px;
-    border-radius: 18px;
-    overflow: hidden;
-    background: #fff;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.18);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .app-tile img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .app-label {
-    margin-top: 6px;
-    font-size: 12px;
-    color: #333;
-  }
-
-</style>
-
-
+    
+    <section id="search" class="bg-gray">
+        <div class="container">
+            <h2 class="section-title">CE QUE JE RECHERCHE</h2>
+            <div class="search-content">
+                <div class="search-points">
+                    <div class="search-point">Je veux approfondir mes compétences en SEO, réseaux sociaux, webdesign, UX/UI et stratégie digitale. Une entreprise qui me laisse apprendre, expérimenter et participer à la performance de ses actions serait idéale pour mon évolution.</div>
+                    <div class="search-point">J'aimerais mettre mes compétences au service d'une organisation qui partage des valeurs fortes: créativité, impact, engagement ou innovation. Participer à quelque chose de plus grand que moi me motive énormément.</div>
+                    <div class="search-point">Je recherche un environnement où l'on peut poser des questions, recevoir des retours constructifs et progresser chaque jour. L'accompagnement, le partage de connaissances et le travail en équipe sont essentiels pour moi.</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     
     <section id="contact" class="contact-section">
@@ -969,7 +1015,7 @@ document.getElementById('app-icons').innerHTML += (function(){
             <h2 class="section-title">CONTACT</h2>
             <div class="contact-grid">
                 <div>
-                    <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1.5rem;">COORDONNÉES</h3>
+                    <h3>COORDONNÉES</h3>
                     <div class="contact-item">
                         <svg class="contact-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
@@ -1000,7 +1046,7 @@ document.getElementById('app-icons').innerHTML += (function(){
                     </div>
                 </div>
                 <div>
-                    <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1.5rem;">LIENS</h3>
+                    <h3>LIENS</h3>
                     <div class="contact-item">
                         <svg class="contact-icon" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
@@ -1009,8 +1055,9 @@ document.getElementById('app-icons').innerHTML += (function(){
                             <div class="contact-value"><a href="https://www.linkedin.com/in/cassidy-charles-055a23383" target="_blank">LinkedIn</a></div>
                         </div>
                     </div>
-                    
-                       
+                </div>
+            </div>
+            
             <div class="footer">
                 <p>© 2026 Cassidy Charles - Tous droits réservés</p>
             </div>
@@ -1018,7 +1065,18 @@ document.getElementById('app-icons').innerHTML += (function(){
     </section>
 
     <script>
-        
+        // Menu hamburger
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.remove('active');
+        }
+
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1028,8 +1086,8 @@ document.getElementById('app-icons').innerHTML += (function(){
                 }
             });
         });
-  
-        
+
+        // Carousels
         const carouselImages = {
             carousel1: [
                 'https://i.postimg.cc/BbfWjnS1/Final-Osmera.jpg',
@@ -1084,15 +1142,13 @@ document.getElementById('app-icons').innerHTML += (function(){
         }
 
         function updateCarousel(carouselId) {
-            const slideNumber = carousels[carouselId] + 1;
             const carousel = document.getElementById(carouselId);
             const currentImage = carouselImages[carouselId][carousels[carouselId]];
-            
             
             carousel.style.backgroundImage = `url('${currentImage}')`;
             carousel.style.backgroundSize = 'cover';
             carousel.style.backgroundPosition = 'center';
-            carousel.innerHTML = ''; 
+            carousel.innerHTML = '';
 
             const dotsContainer = document.getElementById('dots' + carouselId.slice(-1));
             const dots = dotsContainer.querySelectorAll('.dot');
@@ -1101,9 +1157,42 @@ document.getElementById('app-icons').innerHTML += (function(){
             });
         }
 
+        // Initialize carousels
         initCarousel('carousel1');
         initCarousel('carousel2');
         initCarousel('carousel3');
+
+        // Software icons
+        document.getElementById('app-icons').innerHTML = (function(){
+            const apps = [
+                {name:'Canva',src:'https://images-eds-ssl.xboxlive.com/image?url=4rt9.lXDC4H_93laV1_eHHFT949fUipzkiFOBH3fAiZZUCdYojwUyX2aTonS1aIwMrx6NUIsHfUHSLzjGJFxxo4K81Ei7WzcnqEk8W.Mgwb4qpGvx4RNnZ1Tw3PFpG5m0N7wZZU3S406iJGUFroKzwJPszOT6vgp170Fs_YVbMM-&format=source'},
+                {name:'Trello',src:'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/7d/74/23/7d742311-c2d5-2416-be3c-a710e7742957/electron.png/1200x630bb.png'},
+                {name:'Illustrator',src:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBYZ-s_4KM_H7JkE5B0ZUofREIDHWnccKOTw&s'},
+                {name:'Photoshop',src:'https://images.sftcdn.net/images/t_app-icon-m/p/bbdedd58-96bf-11e6-ab2f-00163ed833e7/2782924292/adobe-photoshop-icon.png'},
+                {name:'Wix',src:'https://cdn-icons-png.flaticon.com/512/5968/5968770.png'},
+                {name:'Scenario',src:'https://cdn.prod.website-files.com/65f9d7f5c88d4a9940b06735/66566912d17d62193f68cbd5_Wa9BPILP_400x400.webp'},
+                {name:'Excel',src:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Microsoft_Office_Excel_%282019–2025%29.svg/826px-Microsoft_Office_Excel_%282019–2025%29.svg.png'},
+                {name:'Word',src:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Microsoft_Office_Word_%282025–present%29.svg/1166px-Microsoft_Office_Word_%282025–present%29.svg.png'},
+                {name:'NanoBanana',src:'https://store-images.s-microsoft.com/image/apps.47708.13995459486483234.d55d4637-fda0-48bc-b660-131213c2390f.a5803faf-f2fb-4a2a-b350-a42da831ac3b'},
+                {name:'CapCut',src:'https://static.vecteezy.com/ti/vecteur-libre/p1/13948546-logo-capcut-sur-fond-blanc-transparent-gratuit-vectoriel.jpg'},
+                {name:'Feedly',src:'https://upload.wikimedia.org/wikipedia/commons/5/56/Feedly-logo.png'},
+                {name:'Teams',src:'https://img.freepik.com/premium-vector/teams-logo_1157034-580.jpg?semt=ais_hybrid&w=740&q=80'},
+                {name:'Asana',src:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwEodKlQHNi3FEyWj5ODtQapWRqv12Fqlk4g&s'},
+                {name:'Outlook',src:'https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/B00-M365-Outlook-App-Icon'},
+                {name:'Powerpoint',src:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiXCTF2B6CXGFLDZAdbS35VS9E2o3HbK7xwA&s'},
+                {name:'Sublimetext',src:'https://upload.wikimedia.org/wikipedia/en/d/d2/Sublime_Text_3_logo.png'},
+                {name:'Figma',src:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMfPeVpXBDNMY2Mio-NN9lZSb9jOaw2CBs4Q&s'},
+                {name:'Creative Cloud',src:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAEPcn7-1FET8-xENfhX6J97htkiZnanwxbg&s'}
+            ];
+            return apps.map(a => `
+                <div class="app-item" title="${a.name}">
+                    <div class="app-tile">
+                        <img src="${a.src}" alt="${a.name} logo" loading="lazy">
+                    </div>
+                    <div class="app-label">${a.name}</div>
+                </div>
+            `).join('');
+        })();
     </script>
 </body>
 </html>
